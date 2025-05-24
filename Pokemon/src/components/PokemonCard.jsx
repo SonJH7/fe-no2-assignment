@@ -30,7 +30,7 @@ export default function PokemonCard({ pokemon, onAdd }) {
         {pokemon.name}
       </h3>
       <Img src={pokemon.image} alt={pokemon.name} />
-      <p>타입: {pokemon.type.join(', ')}</p>
+      <p>타입: {pokemon.types.join(', ')}</p>
       <Button onClick={() => onAdd(pokemon)}>추가</Button>
     </Card>
   );

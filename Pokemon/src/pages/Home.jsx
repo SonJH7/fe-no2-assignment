@@ -1,45 +1,51 @@
-import React, { useState } from 'react';
+// src/pages/Home.jsx
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
-import Dashboard from '../components/Dashboard';
-import PokemonList from '../components/PokemonList';
-import mockData from '../mock.js';
 
-const Container = styled.div`
-  display: flex;
-  gap: 2rem;
-  padding: 2rem;
-  @media (max-width: 768px) {
-    flex-direction: column;
-  }
-`;
-
-export default function Dex() {
-  const [selected, setSelected] = useState([]);
-
-  const handleAdd = (pokemon) => {
-    if (selected.find(p => p.id === pokemon.id)) {
-      return alert('이미 선택된 포켓몬입니다.');
-    }
-    if (selected.length >= 6) {
-      return alert('더 이상 선택할 수 없습니다.');
-    }
-    setSelected([...selected, pokemon]);
-  };
-
-  const handleRemove = (id) => {
-    setSelected(selected.filter(p => p.id !== id));
-  };
+export default function Home() {
+  const navigate = useNavigate();
+  const logoUrl = 'https://fontmeme.com/images/Pokemon-Logo.jpg'; 
 
   return (
-    <Container>
-      <Dashboard
-        selected={selected}
-        onRemove={handleRemove}
-      />
-      <PokemonList
-        pokemons={mockData}
-        onAdd={handleAdd}
-      />
-    </Container>
+    <div className="app-container">
+      <Wrapper>
+        <LogoImg
+          src={logoUrl}
+          alt="Pokemon Logo"
+          onClick={() => navigate('/dex')}
+        />
+        <StartButton onClick={() => navigate('/dex')}>
+          포켓몬 도감 시작하기
+        </StartButton>
+      </Wrapper>
+    </div>
   );
 }
+
+const Wrapper = styled.div`
+   display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+`;
+
+const LogoImg = styled.img`
+  width: 700px;
+  cursor: pointer;
+`;
+
+const StartButton = styled.button`
+    padding: 0.75rem 1.5rem;
+  background-color: #e60012;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  &:hover {
+    opacity: 0.9;
+  }
+`;
