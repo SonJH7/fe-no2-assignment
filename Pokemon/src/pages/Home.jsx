@@ -1,27 +1,45 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState } from 'react';
 import styled from 'styled-components';
+import Dashboard from '../components/Dashboard';
+import PokemonList from '../components/PokemonList';
+import mockData from '../mock.js';
 
-const Wrapper = styled.div`
+const Container = styled.div`
   display: flex;
-  height: 100vh;
-  justify-content: center;
-  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `;
 
-const Button = styled.button`
-  padding: 1rem 2rem;
-  font-size: 1.25rem;
-  cursor: pointer;
-`;
+export default function Dex() {
+  const [selected, setSelected] = useState([]);
 
-export default function Home() {
-  const nav = useNavigate();
+  const handleAdd = (pokemon) => {
+    if (selected.find(p => p.id === pokemon.id)) {
+      return alert('이미 선택된 포켓몬입니다.');
+    }
+    if (selected.length >= 6) {
+      return alert('더 이상 선택할 수 없습니다.');
+    }
+    setSelected([...selected, pokemon]);
+  };
+
+  const handleRemove = (id) => {
+    setSelected(selected.filter(p => p.id !== id));
+  };
+
   return (
-    <Wrapper>
-      <Button onClick={() => nav('/dex')}>
-        포켓몬 도감 시작하기
-      </Button>
-    </Wrapper>
+    <Container>
+      <Dashboard
+        selected={selected}
+        onRemove={handleRemove}
+      />
+      <PokemonList
+        pokemons={mockData}
+        onAdd={handleAdd}
+      />
+    </Container>
   );
 }
