@@ -56,6 +56,10 @@ export default function Dex() {
               <React.Fragment key={i}>
                 {poke ? (
                   <Card>
+                    <div
+                    onClick={() => navigate(`/detail/${poke.id}`)}
+                    style={{ cursor: 'pointer' }}
+                   >
                     <CardImage
                       src={poke.img_url}
                       alt={poke.korean_name}
@@ -66,6 +70,7 @@ export default function Dex() {
                         No. {String(poke.id).padStart(3, '0')}
                       </p>
                     </Info>
+                    </div>
                     <DeleteButton
                       onClick={() => handleRemove(poke.id)}
                     >
