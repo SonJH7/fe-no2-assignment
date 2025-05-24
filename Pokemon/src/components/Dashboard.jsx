@@ -27,16 +27,16 @@ const Button = styled.button`
 `;
 
 export default function Dashboard({ selected, onRemove }) {
-  return (
-    <Box>
-      <Title>내 포켓몬 ({selected.length}/6)</Title>
-      {selected.map(p => (
-        <Item key={p.id}>
-          <span>{p.name}</span>
-          <Button onClick={() => onRemove(p.id)}>삭제</Button>
-        </Item>
-      ))}
-      {selected.length === 0 && <p>추가된 포켓몬이 없습니다.</p>}
-    </Box>
-  );
+    return (
+        <Box>
+            <Title>내 포켓몬 ({selected.length}/6)</Title>
+            {selected.map(p => (
+                <Item key={p.id}>
+                    <span>{p.name}</span>
+                    <Button onClick={() => onRemove(p.id)}>삭제</Button>
+                </Item>
+            ))}
+            {selected.length === 0 && <p>추가된 포켓몬이 없습니다.</p>}
+        </Box>
+    );
 }

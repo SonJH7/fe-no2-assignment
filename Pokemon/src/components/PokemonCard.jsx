@@ -23,15 +23,15 @@ const Button = styled.button`
 `;
 
 export default function PokemonCard({ pokemon, onAdd }) {
-  const nav = useNavigate();
-  return (
-    <Card>
-      <h3 onClick={() => nav(`/detail/${pokemon.id}`)}>
-        {pokemon.name}
-      </h3>
-      <Img src={pokemon.image} alt={pokemon.name} />
-      <p>타입: {pokemon.types.join(', ')}</p>
-      <Button onClick={() => onAdd(pokemon)}>추가</Button>
-    </Card>
-  );
+    const nav = useNavigate();
+    return (
+        <Card>
+            <h3 onClick={() => nav(`/detail/${pokemon.id}`)}>
+                {pokemon.name}
+            </h3>
+            <Img src={pokemon.image} alt={pokemon.name} />
+            <p>타입: {pokemon.types.join(', ')}</p>
+            <Button onClick={() => onAdd(pokemon)}>추가</Button>
+        </Card>
+    );
 }

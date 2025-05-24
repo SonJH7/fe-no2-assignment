@@ -55,21 +55,21 @@ const BackButton = styled.button`
 
 // Detail component
 export default function Detail() {
-  const { id } = useParams();
-  const navigate = useNavigate();
-  const pokemon = MOCK_DATA.find(p => p.id === Number(id));
+    const { id } = useParams();
+    const navigate = useNavigate();
+    const pokemon = MOCK_DATA.find(p => p.id === Number(id));
 
-  if (!pokemon) {
-    return <Wrapper><p>정보를 찾을 수 없습니다.</p></Wrapper>;
-  }
+    if (!pokemon) {
+        return <Wrapper><p>정보를 찾을 수 없습니다.</p></Wrapper>;
+    }
 
-  return (
-    <Wrapper>
-      <BackButton onClick={() => navigate(-1)}>← 뒤로 가기</BackButton>
-      <Img src={pokemon.img_url} alt={pokemon.korean_name} />
-      <Title>{pokemon.korean_name}</Title>
-      <Type>타입: {pokemon.types.join(', ')}</Type>
-      <Description>{pokemon.description}</Description>
-    </Wrapper>
-  );
+    return (
+        <Wrapper>
+            <BackButton onClick={() => navigate(-1)}>← 뒤로 가기</BackButton>
+            <Img src={pokemon.img_url} alt={pokemon.korean_name} />
+            <Title>{pokemon.korean_name}</Title>
+            <Type>타입: {pokemon.types.join(', ')}</Type>
+            <Description>{pokemon.description}</Description>
+        </Wrapper>
+    );
 }

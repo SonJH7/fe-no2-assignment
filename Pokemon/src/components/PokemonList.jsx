@@ -10,15 +10,15 @@ const Grid = styled.div`
 `;
 
 export default function PokemonList({ pokemons, onAdd }) {
-  return (
-    <Grid>
-      {pokemons.map(p => (
-        <PokemonCard
-          key={p.id}
-          pokemon={p}
-          onAdd={onAdd}
-        />
-      ))}
-    </Grid>
-  );
+    return (
+        <Grid>
+            {pokemons.map(p => (
+                <PokemonCard
+                    key={p.id}
+                    pokemon={p}
+                    onAdd={onAdd}
+                />
+            ))}
+        </Grid>
+    );
 }

@@ -4,23 +4,23 @@ import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
 export default function Home() {
-  const navigate = useNavigate();
-  const logoUrl = 'https://fontmeme.com/images/Pokemon-Logo.jpg'; 
+    const navigate = useNavigate();
+    const logoUrl = 'https://fontmeme.com/images/Pokemon-Logo.jpg';
 
-  return (
-    <div className="app-container">
-      <Wrapper>
-        <LogoImg
-          src={logoUrl}
-          alt="Pokemon Logo"
-          onClick={() => navigate('/dex')}
-        />
-        <StartButton onClick={() => navigate('/dex')}>
-          포켓몬 도감 시작하기
-        </StartButton>
-      </Wrapper>
-    </div>
-  );
+    return (
+        <div className="app-container">
+            <Wrapper>
+                <LogoImg
+                    src={logoUrl}
+                    alt="Pokemon Logo"
+                    onClick={() => navigate('/dex')}
+                />
+                <StartButton onClick={() => navigate('/dex')}>
+                    포켓몬 도감 시작하기
+                </StartButton>
+            </Wrapper>
+        </div>
+    );
 }
 
 const Wrapper = styled.div`
