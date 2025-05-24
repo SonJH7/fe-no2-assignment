@@ -33,7 +33,8 @@ export const SelectedTitle = styled.h2`
 
 /** 슬롯 그리드 (고정 6칸) */
 export const SelectedGrid = styled.div`
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
   gap: 1rem;
 `;
 

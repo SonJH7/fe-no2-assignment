@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import MOCK_DATA from '../mock';
 import {
   PageWrapper,
@@ -23,6 +24,7 @@ const POKEBALL_URL =
 export default function Dex() {
   // 고정 6칸 슬롯: null = 빈칸, 객체 = 선택된 포켓몬
   const [slots, setSlots] = useState(Array(6).fill(null));
+  const navigate = useNavigate();
 
   const handleAdd = (poke) => {
     if (slots.some(s => s?.id === poke.id)) {
@@ -30,7 +32,7 @@ export default function Dex() {
     }
     const idx = slots.indexOf(null);
     if (idx === -1) {
-      return alert('더 이상 선택할 수 없습니다.');
+      return alert('포켓몬은 최대 여섯개까지만 선택 할 수 있어요.');
     }
     const next = [...slots];
     next[idx] = poke;
@@ -90,16 +92,16 @@ export default function Dex() {
           <CardGrid>
             {MOCK_DATA.map(poke => (
               <Card key={poke.id}>
-                <CardImage
-                  src={poke.img_url}
-                  alt={poke.korean_name}
-                />
+                <div
+                onClick={() => navigate(`/detail/${poke.id}`)}
+                style={{ cursor: 'pointer' }}
+              >
+                <CardImage src={poke.img_url} alt={poke.korean_name} />
                 <Info>
                   <p>{poke.korean_name}</p>
-                  <p>
-                    No. {String(poke.id).padStart(3, '0')}
-                  </p>
+                  <p>No. {String(poke.id).padStart(3, '0')}</p>
                 </Info>
+              </div>
                 <AddButton
                   onClick={() => handleAdd(poke)}
                 >

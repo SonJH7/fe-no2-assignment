@@ -1,30 +1,75 @@
 import React from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
-import mockData from '../mock';
+import MOCK_DATA from '../mock';
 
+// Styled components
 const Wrapper = styled.div`
-  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
 `;
 
 const Img = styled.img`
   width: 200px;
+  height: auto;
+  margin-bottom: 1.5rem;
+
+  @media (max-width: 480px) {
+    width: 150px;
+  }
 `;
 
+const Title = styled.h1`
+  color: #e63946;
+  margin: 1rem 0;
+  font-size: 2rem;
+  text-align: center;
+`;
+
+const Type = styled.p`
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: #333;
+`;
+
+const Description = styled.p`
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: #555;
+`;
+
+const BackButton = styled.button`
+  background: #f1f1f1;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  &:hover { background: #e0e0e0; }
+`;
+
+// Detail component
 export default function Detail() {
   const { id } = useParams();
-  const nav = useNavigate();
-  const pokemon = mockData.find(p => p.id === Number(id));
+  const navigate = useNavigate();
+  const pokemon = MOCK_DATA.find(p => p.id === Number(id));
 
-  if (!pokemon) return <p>정보를 찾을 수 없습니다.</p>;
+  if (!pokemon) {
+    return <Wrapper><p>정보를 찾을 수 없습니다.</p></Wrapper>;
+  }
 
   return (
     <Wrapper>
-      <button onClick={() => nav(-1)}>← 뒤로 가기</button>
-      <h1>{pokemon.name}</h1>
-      <Img src={pokemon.image} alt={pokemon.name} />
-      <p>타입: {pokemon.type.join(', ')}</p>
-      <p>{pokemon.description}</p>
+      <BackButton onClick={() => navigate(-1)}>← 뒤로 가기</BackButton>
+      <Img src={pokemon.img_url} alt={pokemon.korean_name} />
+      <Title>{pokemon.korean_name}</Title>
+      <Type>타입: {pokemon.types.join(', ')}</Type>
+      <Description>{pokemon.description}</Description>
     </Wrapper>
   );
 }
