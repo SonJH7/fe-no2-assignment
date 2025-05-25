@@ -1,5 +1,5 @@
 # fe-no2-assignment
-````markdown
+
 <p align="center">
   <img src="https://raw.githubusercontent.com/your-username/your-repo/main/public/logo.png" alt="PokéDex Logo" width="200" />
 </p>
