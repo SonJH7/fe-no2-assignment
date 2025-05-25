@@ -4,7 +4,7 @@
   <img src="https://postfiles.pstatic.net/MjAyMzA1MjNfMTA2/MDAxNjg0ODIyNTE3MzYz.Tsu0XB0JLwyei5iDONAOmfEUAKTdeTXLOLySAdSGwI8g.MKqg-iVZJimxfirv4iIqtpTtBKBo8cxD_sT_3ZJbWDsg.JPEG.yrchungraxi/1684506057139.jpg?type=w580" width="200" />
 </p>
 
-<h1 align="center">⚡️ 나만의 Pokémon Dex ⚡️</h1>
+<h1 align="center">⚡️ My Pokémon Dex ⚡️</h1>
 
 <p align="center">
   A slick, modern PokéDex built with React, Redux Toolkit &︎ Context API — prop-drilling → context → redux, styled-components, and react-toastify for polished UX!  
@@ -14,7 +14,6 @@
 
 ## 🚀 Live Demo
 
-> 곧 배포 주소를 업데이트합니다!  
 > Preview: [https://your-app.vercel.app](https://your-app.vercel.app)  
 
 ---
@@ -70,7 +69,7 @@ git checkout -b prop-drilling
 git checkout main
 git checkout -b context
 
-# redux-toolkits
+# challenge
 git checkout main
 git checkout -b redux-toolkits
 ````
@@ -165,6 +164,6 @@ See [LICENSE](LICENSE) for details.
 ---
 
 <p align="center">
-  Made with ❤️ by [Your Name](https://github.com/your-username)  
+  Made with ❤️ by SONJH7 (https://github.com/SonJH7)  
 </p>
 ```
