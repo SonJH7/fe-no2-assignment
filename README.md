@@ -26,7 +26,7 @@
 4. [Getting Started](#-getting-started)  
 5. [Available Scripts](#-available-scripts)  
 6. [Screenshots](#-screenshots)  
-7. [License](#-license)  
+
 
 ---
 
@@ -156,14 +156,3 @@ git checkout -b redux-toolkits
 
 ---
 
-## 📄 License
-
-This project is licensed under the MIT License.
-See [LICENSE](LICENSE) for details.
-
----
-
-<p align="center">
-  Made with ❤️ by SONJH7 (https://github.com/SonJH7)  
-</p>
-```
