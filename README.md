@@ -25,7 +25,6 @@
 3. [Tech Stack](#-tech-stack)  
 4. [Getting Started](#-getting-started)  
 5. [Available Scripts](#-available-scripts)  
-6. [Screenshots](#-screenshots)  
 
 
 ---
@@ -143,16 +142,6 @@ git checkout -b redux-toolkits
 | `preview` | Preview production build locally |
 | `lint`    | Run ESLint checks                |
 | `test`    | Run unit/UI tests (Jest/RTL)     |
-
----
-
-## 🖼 Screenshots
-
-<div align="center">
-  <img src="https://raw.githubusercontent.com/your-username/your-repo/main/screenshots/home.png" alt="Home Page" width="300" />
-  <img src="https://raw.githubusercontent.com/your-username/your-repo/main/screenshots/dex.png" alt="Dex Page" width="300" />
-  <img src="https://raw.githubusercontent.com/your-username/your-repo/main/screenshots/detail.png" alt="Detail Page" width="300" />
-</div>
 
 ---
 
