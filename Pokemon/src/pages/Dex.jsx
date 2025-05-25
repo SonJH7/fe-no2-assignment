@@ -1,7 +1,8 @@
 // src/pages/Dex.jsx
-import React, { useContext } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+
 import { useNavigate } from 'react-router-dom';
-import { PokemonContext } from '../context/PokemonContext';
+import { addPokemon, removePokemon } from '../features/pokemonSlice';
 import {
   PageWrapper,
   Container,
@@ -24,7 +25,8 @@ const POKEBALL_URL =
 
 export default function Dex() {
   const navigate = useNavigate();
-  const { slots, addPokemon, removePokemon, allPokemons } = useContext(PokemonContext);
+  const dispatch = useDispatch();
+  const { slots, allPokemons } = useSelector(state => state.pokemon);
 
   return (
     <PageWrapper>
@@ -46,9 +48,8 @@ export default function Dex() {
                       <p>No. {String(poke.id).padStart(3, '0')}</p>
                     </Info>
                   </div>
-                  <DeleteButton onClick={() => removePokemon(poke.id)}>
-                    삭제
-                  </DeleteButton>
+                  <DeleteButton onClick={() => dispatch(removePokemon(poke.id))}>삭제</DeleteButton>
+
                 </Card>
               ) : (
                 <Placeholder key={idx}>
@@ -79,9 +80,7 @@ export default function Dex() {
                     <p>No. {String(poke.id).padStart(3, '0')}</p>
                   </Info>
                 </div>
-                <AddButton onClick={() => addPokemon(poke)}>
-                  추가
-                </AddButton>
+                <AddButton onClick={() => dispatch(addPokemon(poke))}>추가</AddButton>
               </Card>
             ))}
           </CardGrid>
