@@ -1,7 +1,7 @@
 # fe-no2-assignment
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/your-username/your-repo/main/public/logo.png" alt="PokéDex Logo" width="200" />
+  <img src="[https://raw.githubusercontent.com/your-username/your-repo/main/public/logo.png" alt="PokéDex Logo](https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/International_Pok%C3%A9mon_logo.svg/269px-International_Pok%C3%A9mon_logo.svg.png)" width="200" />
 </p>
 
 <h1 align="center">⚡️ 나만의 Pokémon Dex ⚡️</h1>
