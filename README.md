@@ -14,7 +14,7 @@
 
 ## 🚀 Live Demo
 
-> Preview: [https://your-app.vercel.app](https://your-app.vercel.app)  
+> Preview: [https://your-app.vercel.app](https://your-app.vercel.app)  ](https://pokemon-app-7-cdlu9ws96-jeonghunsons-projects.vercel.app)
 
 ---
 
